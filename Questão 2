@@ -1,0 +1,25 @@
+                 +-----------------+
+                 |     Produto     |<<abstract>>
+                 +-----------------+
+                 | nome            |
+                 | preco           |
+                 +-----------------+
+                 ^                 ^
+       +----------------+   +--------------------+
+       | ProdutoSimples |   |  ConjuntoProduto   |
+       +----------------+   +--------------------+
+                             | (composição)       |
+                             +--------------------+
+                             | 1       *          |
+                             |---------→ ProdutoSimples
+
++--------+       +--------------------+       +-------------------+
+| Noiva  | 1    *|  RegistroProduto   |*     1|     Produto        |
++--------+       +--------------------+       +-------------------+
+| nome   |       | qtdDesejada        |
+| contato|       | qtdRecebida        |
++--------+       +--------------------+
+
+     *                      *
+  Cliente  ---------------- Produto
+            (N:N – Clientes que registram produtos para noivas)
